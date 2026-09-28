@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clínica Salud Integral - Primera versión</title>
+  <link rel="icon" type="image/png" href="img/logo.png">
+  <!-- Bootstrap 5 e iconos de Bootstrap desde CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/estilos.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Encabezado con logo, teléfono y redes sociales -->
+  <header class="bg-primary text-white py-3">
+    <div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+      <div class="d-flex align-items-center gap-2">
+        <img src="img/logo.png" alt="Logo Clínica Salud Integral" class="logo">
+        <div>
+          <h1 class="h4 mb-0">Clínica Salud Integral</h1>
+          <small>Medicina integrativa en Popayán</small>
+        </div>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+        <span><i class="bi bi-telephone-fill"></i> (602) 820 1234</span>
+        <a href="https://www.facebook.com" target="_blank" class="text-white" title="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com" target="_blank" class="text-white" title="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://x.com" target="_blank" class="text-white" title="X"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://wa.me/573001234567" target="_blank" class="text-white" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><i class="bi bi-heart-pulse"></i> Salud Integral</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+        aria-controls="menuPrincipal" aria-expanded="false" aria-label="Mostrar menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#promociones">Promociones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#medicos">Médicos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#registro">Registro</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Sección 1: promociones en carrusel -->
+    <section id="promociones" class="container my-4">
+      <h2 class="text-center mb-3">Promociones</h2>
+      <div class="contenedor-carrusel">
+        <div id="carruselPromociones" class="carousel slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carruselPromociones" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Promoción 1"></button>
+            <button type="button" data-bs-target="#carruselPromociones" data-bs-slide-to="1" aria-label="Promoción 2"></button>
+            <button type="button" data-bs-target="#carruselPromociones" data-bs-slide-to="2" aria-label="Promoción 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="img/promo1.jpg" class="d-block w-100" alt="Chequeo preventivo">
+              <div class="carousel-caption">
+                <h5>Chequeo preventivo completo</h5>
+                <p>30% de descuento en tu valoración médica integral durante este mes.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/promo2.jpg" class="d-block w-100" alt="Fisioterapia">
+              <div class="carousel-caption">
+                <h5>Primera sesión de fisioterapia gratis</h5>
+                <p>Agenda tu valoración y recibe tu primera sesión sin costo.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/promo3.jpg" class="d-block w-100" alt="Plan nutricional">
+              <div class="carousel-caption">
+                <h5>Plan nutricional personalizado</h5>
+                <p>Consulta de nutrición + 3 meses de seguimiento con 20% de descuento.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carruselPromociones" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carruselPromociones" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 2: especialidades y médicos -->
+    <section id="medicos" class="container my-5">
+      <h2 class="text-center mb-4">Nuestros médicos</h2>
+      <div class="row">
+        <aside class="col-12 col-sm-2 col-md-4 mb-4">
+          <h5>Especialidades</h5>
+          <div class="list-group" id="listaEspecialidades">
+            <a href="#medicos" class="list-group-item list-group-item-action active" data-especialidad="todas">Todas</a>
+            <a href="#medicos" class="list-group-item list-group-item-action" data-especialidad="terapia-neural">Terapia Neural</a>
+            <a href="#medicos" class="list-group-item list-group-item-action" data-especialidad="quiropraxia">Quiropraxia</a>
+            <a href="#medicos" class="list-group-item list-group-item-action" data-especialidad="fisioterapia">Fisioterapia</a>
+            <a href="#medicos" class="list-group-item list-group-item-action" data-especialidad="nutricion">Nutrición y Dietética Terapéutica</a>
+            <a href="#medicos" class="list-group-item list-group-item-action" data-especialidad="acupuntura">Acupuntura</a>
+          </div>
+          <p id="descripcionEspecialidad" class="small text-muted mt-3">
+            Selecciona una especialidad para ver su descripción y los médicos que la atienden.
+          </p>
+        </aside>
+
+        <div class="col-12 col-sm-10 col-md-8">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3" id="listaMedicos">
+
+            <div class="col" data-especialidad="fisioterapia">
+              <div class="card h-100 border">
+                <img src="img/medico1.jpg" class="card-img-top img-fluid" alt="Dr. Juan Pérez">
+                <div class="card-body">
+                  <h5 class="card-title">Dr. Juan Pérez Gómez</h5>
+                  <p class="card-text small">Especialista en Fisioterapia Deportiva.</p>
+                  <p class="card-text small fst-italic">"Comprometido con tu recuperación."</p>
+                  <a href="#registro" class="btn btn-primary btn-sm btn-agendar" data-medico="1">Agendar Cita</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col" data-especialidad="quiropraxia">
+              <div class="card h-100 border">
+                <img src="img/medico2.jpg" class="card-img-top img-fluid" alt="Dra. Catalina Sánchez">
+                <div class="card-body">
+                  <h5 class="card-title">Dra. Catalina Sánchez Ruiz</h5>
+                  <p class="card-text small">Especialista en Quiropraxia de columna y postura.</p>
+                  <p class="card-text small fst-italic">"La salud es fundamental."</p>
+                  <a href="#registro" class="btn btn-primary btn-sm btn-agendar" data-medico="2">Agendar Cita</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col" data-especialidad="nutricion">
+              <div class="card h-100 border">
+                <img src="img/medico3.jpg" class="card-img-top img-fluid" alt="Dr. Andrés Cardozo">
+                <div class="card-body">
+                  <h5 class="card-title">Dr. Andrés Cardozo Muñoz</h5>
+                  <p class="card-text small">Especialista en Nutrición y Dietética Terapéutica.</p>
+                  <p class="card-text small fst-italic">"Un alimento sano alarga la vida."</p>
+                  <a href="#registro" class="btn btn-primary btn-sm btn-agendar" data-medico="3">Agendar Cita</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col" data-especialidad="terapia-neural">
+              <div class="card h-100 border">
+                <img src="img/medico4.jpg" class="card-img-top img-fluid" alt="Dra. Valentina Ortiz">
+                <div class="card-body">
+                  <h5 class="card-title">Dra. Valentina Ortiz Mosquera</h5>
+                  <p class="card-text small">Especialista en Terapia Neural y dolor crónico.</p>
+                  <p class="card-text small fst-italic">"Sanar desde la raíz es posible."</p>
+                  <a href="#registro" class="btn btn-primary btn-sm btn-agendar" data-medico="4">Agendar Cita</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col" data-especialidad="terapia-neural">
+              <div class="card h-100 border">
+                <img src="img/medico5.jpg" class="card-img-top img-fluid" alt="Dr. Hernán Velasco">
+                <div class="card-body">
+                  <h5 class="card-title">Dr. Hernán Velasco Rengifo</h5>
+                  <p class="card-text small">Especialista en Terapia Neural y odontología neurofocal.</p>
+                  <p class="card-text small fst-italic">"30 años de experiencia a tu servicio."</p>
+                  <a href="#registro" class="btn btn-primary btn-sm btn-agendar" data-medico="5">Agendar Cita</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col" data-especialidad="nutricion">
+              <div class="card h-100 border">
+                <img src="img/medico6.jpg" class="card-img-top img-fluid" alt="Dra. Laura Muñoz">
+                <div class="card-body">
+                  <h5 class="card-title">Dra. Laura Muñoz Idrobo</h5>
+                  <p class="card-text small">Especialista en Nutrición deportiva y pediátrica.</p>
+                  <p class="card-text small fst-italic">"Comer bien es el primer paso al bienestar."</p>
+                  <a href="#registro" class="btn btn-primary btn-sm btn-agendar" data-medico="6">Agendar Cita</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col" data-especialidad="acupuntura">
+              <div class="card h-100 border">
+                <img src="img/medico7.jpg" class="card-img-top img-fluid" alt="Dr. Santiago Rivera">
+                <div class="card-body">
+                  <h5 class="card-title">Dr. Santiago Rivera Castillo</h5>
+                  <p class="card-text small">Especialista en Acupuntura y medicina tradicional china.</p>
+                  <p class="card-text small fst-italic">"Equilibrio y energía para tu día a día."</p>
+                  <a href="#registro" class="btn btn-primary btn-sm btn-agendar" data-medico="7">Agendar Cita</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col" data-especialidad="fisioterapia">
+              <div class="card h-100 border">
+                <img src="img/medico8.jpg" class="card-img-top img-fluid" alt="Dra. Mariana López">
+                <div class="card-body">
+                  <h5 class="card-title">Dra. Mariana López Chaves</h5>
+                  <p class="card-text small">Especialista en Fisioterapia y rehabilitación neurológica.</p>
+                  <p class="card-text small fst-italic">"Cada pequeño avance es una gran victoria."</p>
+                  <a href="#registro" class="btn btn-primary btn-sm btn-agendar" data-medico="8">Agendar Cita</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 3: registro de pacientes y citas -->
+    <section id="registro" class="container my-5">
+      <h2 class="text-center mb-4">Registro de nuevos usuarios</h2>
+      <p class="lead text-center mb-4">Registra al paciente, agenda su cita y consúltala cuando quieras.</p>
+
+      <div class="border rounded p-4 mx-auto formulario">
+        <ul class="nav nav-tabs mb-4" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="tab-paciente" data-bs-toggle="tab" data-bs-target="#panel-paciente" type="button" role="tab">
+              <i class="bi bi-person-plus"></i> Registro de paciente
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tab-cita" data-bs-toggle="tab" data-bs-target="#panel-cita" type="button" role="tab">
+              <i class="bi bi-calendar-plus"></i> Agendar cita
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="tab-citas" data-bs-toggle="tab" data-bs-target="#panel-citas" type="button" role="tab">
+              <i class="bi bi-calendar-week"></i> Citas registradas <span class="badge bg-primary" id="contadorCitas">0</span>
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <!-- Pestaña 1: formulario del paciente -->
+          <div class="tab-pane fade show active" id="panel-paciente" role="tabpanel">
+            <div id="mensajePaciente" class="alert d-none"></div>
+          <form id="formRegistro" novalidate>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="nombres" class="form-label">Nombres *</label>
+                <input type="text" class="form-control" id="nombres" name="nombres">
+                <div class="text-danger small" id="error-nombres"></div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="apellidos" class="form-label">Apellidos *</label>
+                <input type="text" class="form-control" id="apellidos" name="apellidos">
+                <div class="text-danger small" id="error-apellidos"></div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <label for="tipoDocumento" class="form-label">Tipo de documento *</label>
+                <select class="form-select" id="tipoDocumento" name="tipoDocumento">
+                  <option value="">Seleccione...</option>
+                  <option value="CC">Cédula de ciudadanía</option>
+                  <option value="TI">Tarjeta de identidad</option>
+                  <option value="CE">Cédula de extranjería</option>
+                  <option value="PA">Pasaporte</option>
+                </select>
+                <div class="text-danger small" id="error-tipoDocumento"></div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="numeroDocumento" class="form-label">Número de documento *</label>
+                <input type="text" class="form-control" id="numeroDocumento" name="numeroDocumento">
+                <div class="text-danger small" id="error-numeroDocumento"></div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="fechaNacimiento" class="form-label">Fecha de nacimiento *</label>
+                <input type="date" class="form-control" id="fechaNacimiento" name="fechaNacimiento">
+                <div class="text-danger small" id="error-fechaNacimiento"></div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label d-block">Sexo *</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="sexo" id="sexoF" value="F">
+                <label class="form-check-label" for="sexoF">Femenino</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="sexo" id="sexoM" value="M">
+                <label class="form-check-label" for="sexoM">Masculino</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="sexo" id="sexoO" value="O">
+                <label class="form-check-label" for="sexoO">Otro</label>
+              </div>
+              <div class="text-danger small" id="error-sexo"></div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="telefono" class="form-label">Celular *</label>
+                <input type="tel" class="form-control" id="telefono" name="telefono">
+                <div class="text-danger small" id="error-telefono"></div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="correo" class="form-label">Correo electrónico *</label>
+                <input type="email" class="form-control" id="correo" name="correo">
+                <div class="text-danger small" id="error-correo"></div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="contrasena" class="form-label">Contraseña *</label>
+                <input type="password" class="form-control" id="contrasena" name="contrasena">
+                <div class="form-text">Mínimo 8 caracteres, con letras y números.</div>
+                <div class="text-danger small" id="error-contrasena"></div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="confirmarContrasena" class="form-label">Confirmar contraseña *</label>
+                <input type="password" class="form-control" id="confirmarContrasena" name="confirmarContrasena">
+                <div class="text-danger small" id="error-confirmarContrasena"></div>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-start gap-2">
+              <button type="submit" class="btn btn-primary">Registrar</button>
+              <button type="reset" class="btn btn-secondary">Limpiar</button>
+            </div>
+
+          </form>
+          </div>
+
+          <!-- Pestaña 2: formulario de la cita -->
+          <div class="tab-pane fade" id="panel-cita" role="tabpanel">
+            <div id="sinPacientes" class="alert alert-info">
+              Aún no hay pacientes registrados. Primero registra al paciente en la pestaña <strong>Registro de paciente</strong>.
+            </div>
+            <div id="mensajeCita" class="alert d-none"></div>
+
+            <form id="formCita" novalidate>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="citaPaciente" class="form-label">Paciente *</label>
+                  <select class="form-select" id="citaPaciente" name="paciente">
+                    <option value="">Seleccione...</option>
+                  </select>
+                  <div class="text-danger small" id="error-cita-paciente"></div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="citaMedico" class="form-label">Médico *</label>
+                  <select class="form-select" id="citaMedico" name="medico">
+                    <option value="">Seleccione...</option>
+                    <option value="1">Dr. Juan Pérez Gómez - Fisioterapia</option>
+                    <option value="2">Dra. Catalina Sánchez Ruiz - Quiropraxia</option>
+                    <option value="3">Dr. Andrés Cardozo Muñoz - Nutrición</option>
+                    <option value="4">Dra. Valentina Ortiz Mosquera - Terapia Neural</option>
+                    <option value="5">Dr. Hernán Velasco Rengifo - Terapia Neural</option>
+                    <option value="6">Dra. Laura Muñoz Idrobo - Nutrición</option>
+                    <option value="7">Dr. Santiago Rivera Castillo - Acupuntura</option>
+                    <option value="8">Dra. Mariana López Chaves - Fisioterapia</option>
+                  </select>
+                  <div class="text-danger small" id="error-cita-medico"></div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="citaFecha" class="form-label">Fecha *</label>
+                  <input type="date" class="form-control" id="citaFecha" name="fecha">
+                  <div class="text-danger small" id="error-cita-fecha"></div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="citaHora" class="form-label">Hora *</label>
+                  <select class="form-select" id="citaHora" name="hora">
+                    <option value="">Seleccione...</option>
+                  </select>
+                  <div class="form-text">Las horas ocupadas del médico aparecen deshabilitadas.</div>
+                  <div class="text-danger small" id="error-cita-hora"></div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="citaMotivo" class="form-label">Motivo de la consulta (opcional)</label>
+                <textarea class="form-control" id="citaMotivo" name="motivo" rows="2" maxlength="200"></textarea>
+              </div>
+
+              <div class="d-flex justify-content-start gap-2">
+                <button type="submit" class="btn btn-primary">Agendar cita</button>
+                <button type="reset" class="btn btn-secondary">Limpiar</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Pestaña 3: citas y pacientes registrados -->
+          <div class="tab-pane fade" id="panel-citas" role="tabpanel">
+            <h5>Citas agendadas</h5>
+            <p id="sinCitas" class="text-muted">No hay citas agendadas.</p>
+            <div class="table-responsive">
+              <table class="table table-striped align-middle d-none" id="tablaCitas">
+                <thead>
+                  <tr>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Paciente</th>
+                    <th>Médico</th>
+                    <th>Motivo</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+
+            <h5 class="mt-4">Pacientes registrados</h5>
+            <p id="sinPacientesLista" class="text-muted">No hay pacientes registrados.</p>
+            <ul class="list-group" id="listaPacientes"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container-fluid text-center">
+      <p class="mb-1"><strong>Clínica Salud Integral</strong> · Calle 5 # 10-20, Popayán, Cauca</p>
+      <p class="mb-2"><i class="bi bi-envelope"></i> contacto@saludintegral.com · <i class="bi bi-telephone"></i> (602) 820 1234</p>
+      <div class="d-flex justify-content-center gap-3 fs-5 mb-2">
+        <a href="https://www.facebook.com" target="_blank" class="text-white" title="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com" target="_blank" class="text-white" title="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://x.com" target="_blank" class="text-white" title="X"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://www.youtube.com" target="_blank" class="text-white" title="YouTube"><i class="bi bi-youtube"></i></a>
+        <a href="https://wa.me/573001234567" target="_blank" class="text-white" title="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+      </div>
+      <small>&copy; 2026 Clínica Salud Integral · Laboratorio de Ingeniería del Software III - Universidad del Cauca</small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

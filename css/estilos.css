@@ -1,0 +1,61 @@
+/* Estilos propios de la primera versión (sencilla) */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+}
+
+/* Las imágenes del carrusel se adaptan al div padre */
+.contenedor-carrusel {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.contenedor-carrusel .carousel-item img {
+  height: 380px;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.45);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+@media (max-width: 575.98px) {
+  .contenedor-carrusel .carousel-item img {
+    height: 240px;
+  }
+  .carousel-caption p {
+    display: none;
+  }
+}
+
+/* Barra lateral muy angosta en pantallas pequeñas (2 de 12 columnas) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #listaEspecialidades .list-group-item {
+    font-size: 0.7rem;
+    padding: 0.4rem;
+  }
+  aside h5 {
+    font-size: 0.75rem;
+    word-break: break-word;
+  }
+  #descripcionEspecialidad {
+    font-size: 0.7rem;
+  }
+}
+
+.formulario {
+  max-width: 850px;
+}
+
+/* Espacio reservado para los mensajes de error (evita que el formulario "salte") */
+#formRegistro .text-danger {
+  min-height: 1.3em;
+}
